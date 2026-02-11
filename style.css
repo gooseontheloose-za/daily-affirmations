@@ -6,141 +6,15 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background: #667eea;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     overflow: hidden;
-    position: relative;
 }
 
-/* Only animate on desktop */
-@media (min-width: 768px) {
-    body {
-        background-size: 200% 200%;
-        animation: gradientShift 15s ease infinite;
-    }
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Animated Background */
-.background-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-}
-
-/* Hide background animations on mobile for performance */
-@media (max-width: 767px) {
-    .background-animation {
-        display: none;
-    }
-}
-
-.floating-shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.1;
-    animation: float 20s infinite ease-in-out;
-}
-
-.shape-1 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #fff, transparent);
-    top: -100px;
-    left: -100px;
-    animation-delay: 0s;
-}
-
-.shape-2 {
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, #ffd93d, transparent);
-    top: 50%;
-    right: -50px;
-    animation-delay: 3s;
-    animation-duration: 25s;
-}
-
-.shape-3 {
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, #6bcbff, transparent);
-    bottom: -80px;
-    left: 20%;
-    animation-delay: 5s;
-    animation-duration: 22s;
-}
-
-.shape-4 {
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, #ff6b9d, transparent);
-    top: 20%;
-    right: 30%;
-    animation-delay: 2s;
-    animation-duration: 18s;
-}
-
-.shape-5 {
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle, #c471f5, transparent);
-    bottom: 30%;
-    right: 10%;
-    animation-delay: 4s;
-    animation-duration: 24s;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    25% {
-        transform: translate(30px, -30px) scale(1.1);
-    }
-    50% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
-    75% {
-        transform: translate(20px, 30px) scale(1.05);
-    }
-}
-
-/* Starry effect */
-.stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(2px 2px at 20px 30px, white, transparent),
-        radial-gradient(2px 2px at 60px 70px, white, transparent),
-        radial-gradient(1px 1px at 50px 50px, white, transparent),
-        radial-gradient(1px 1px at 130px 80px, white, transparent),
-        radial-gradient(2px 2px at 90px 10px, white, transparent);
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    animation: twinkle 3s infinite;
-    opacity: 0.3;
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
-}
 
 .container {
     max-width: 500px;
@@ -158,54 +32,18 @@ header {
     text-align: center;
     color: white;
     margin-bottom: 20px;
-    animation: fadeInDown 0.8s ease;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.gradient-text {
-    font-size: 2.2em;
+header h1 {
+    font-size: 2em;
     margin-bottom: 10px;
-    color: white;
-    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-/* Only animate on desktop */
-@media (min-width: 768px) {
-    .gradient-text {
-        background: linear-gradient(45deg, #fff, #ffd93d, #fff, #6bcbff);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradientText 5s ease infinite;
-        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
-    }
-}
-
-@keyframes gradientText {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    font-weight: 700;
 }
 
 .subtitle {
-    opacity: 0.95;
-    font-size: 1em;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 300;
+    opacity: 0.9;
+    font-size: 0.9em;
+    font-weight: 400;
 }
 
 .card-container {
@@ -221,227 +59,59 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 25px;
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: grab;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s ease;
     user-select: none;
-    animation: cardEntrance 0.6s ease backwards;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    overflow: hidden;
-    will-change: transform;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-}
-
-@keyframes cardEntrance {
-    from {
-        opacity: 0;
-        transform: scale(0.8) translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-.card-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
-    z-index: 0;
-}
-
-/* Only animate on desktop */
-@media (min-width: 768px) {
-    .card-background {
-        animation: backgroundPulse 6s ease-in-out infinite;
-    }
-}
-
-@keyframes backgroundPulse {
-    0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.4;
-        transform: scale(1.05);
-    }
-}
-
-.card-emoji {
-    position: absolute;
-    font-size: 8em;
-    opacity: 0.15;
-    z-index: 1;
-    pointer-events: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Only animate on desktop */
-@media (min-width: 768px) {
-    .card-emoji {
-        animation: emojiFloat 8s ease-in-out infinite;
-    }
-}
-
-@keyframes emojiFloat {
-    0%, 100% {
-        transform: translate(-50%, -50%) rotate(-5deg) scale(1);
-    }
-    50% {
-        transform: translate(-50%, -50%) rotate(5deg) scale(1.1);
-    }
-}
-
-.card-content {
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.98);
-    border-radius: 20px;
-    padding: 40px 30px;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-/* Only use backdrop-filter on desktop */
-@media (min-width: 768px) {
-    .card-content {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-    }
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 25px;
-    padding: 2px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 3;
 }
 
 .card.grabbing {
     cursor: grabbing;
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.5);
-    transform: scale(1.05);
 }
 
 .card-type {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 10px 20px;
-    border-radius: 25px;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
     font-size: 0.7em;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 5;
-}
-
-/* Only animate on desktop */
-@media (min-width: 768px) {
-    .card-type {
-        animation: pulse 2s ease-in-out infinite;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+    letter-spacing: 1px;
 }
 
 .card-type.affirmation {
-    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    background: #ffeaa7;
     color: #d68910;
-    box-shadow: 0 4px 15px rgba(253, 203, 110, 0.4);
 }
 
 .card-type.biblical {
-    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+    background: #a29bfe;
     color: white;
-    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
 }
 
 .quote-text {
-    font-size: 1.5em;
-    line-height: 1.7;
+    font-size: 1.4em;
+    line-height: 1.6;
     color: #2d3436;
     margin-bottom: 20px;
-    font-weight: 600;
-    position: relative;
-    animation: fadeIn 0.8s ease 0.3s backwards;
-    z-index: 5;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.quote-text::before {
-    content: '"';
-    position: absolute;
-    top: -25px;
-    left: -15px;
-    font-size: 3.5em;
-    color: rgba(102, 126, 234, 0.15);
-    font-family: Georgia, serif;
-    z-index: -1;
+    font-weight: 500;
 }
 
 .quote-reference {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #636e72;
     font-style: italic;
     margin-top: auto;
-    font-weight: 500;
-    padding-top: 15px;
-    border-top: 2px solid rgba(102, 126, 234, 0.2);
-    animation: fadeIn 0.8s ease 0.5s backwards;
-    z-index: 5;
 }
 
 .card.swipe-right {
@@ -457,356 +127,133 @@ header {
 .actions {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     margin: 30px 0;
-    animation: fadeInUp 0.8s ease 0.4s backwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .btn {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: none;
     background: white;
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-icon {
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s ease;
-}
-
-.btn-ripple {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
+    font-size: 1.5em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:active {
-    transform: scale(0.9);
-}
-
-.btn:active .btn-ripple {
-    transform: scale(2);
-    opacity: 1;
-    transition: transform 0s, opacity 0s;
-}
-
-.btn:active .btn-icon {
-    transform: scale(0.85);
-}
-
-.btn:hover {
-    transform: scale(1.1);
-    box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transform: scale(0.95);
 }
 
 .btn-pass {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    background: #ff6b6b;
     color: white;
-    box-shadow:
-        0 8px 25px rgba(255, 107, 107, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.btn-pass:hover {
-    background: linear-gradient(135deg, #ff5252 0%, #e53935 100%);
-    box-shadow:
-        0 12px 35px rgba(255, 107, 107, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-like {
-    background: linear-gradient(135deg, #51cf66 0%, #37b24d 100%);
+    background: #51cf66;
     color: white;
-    box-shadow:
-        0 8px 25px rgba(81, 207, 102, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.btn-like:hover {
-    background: linear-gradient(135deg, #40c057 0%, #2f9e44 100%);
-    box-shadow:
-        0 12px 35px rgba(81, 207, 102, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .footer {
     text-align: center;
     color: white;
-    font-size: 0.95em;
-    animation: fadeInUp 0.8s ease 0.6s backwards;
+    font-size: 0.9em;
 }
 
 .progress-bar {
     width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.2);
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 15px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #51cf66, #40c057, #37b24d);
+    background: #51cf66;
     border-radius: 10px;
-    transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 10px rgba(81, 207, 102, 0.5);
-    position: relative;
-    overflow: hidden;
-}
-
-.progress-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+    transition: width 0.3s ease;
 }
 
 .swipe-count {
-    font-weight: 600;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
-}
-
-.swipe-count span {
-    font-size: 1.3em;
-    font-weight: 800;
-    color: #ffd93d;
-    text-shadow: 0 0 15px rgba(255, 217, 61, 0.8);
+    font-weight: 500;
 }
 
 .like-indicator,
 .pass-indicator {
     position: absolute;
-    top: 40px;
-    font-size: 5em;
-    font-weight: 900;
+    top: 50px;
+    font-size: 4em;
+    font-weight: bold;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.3s ease;
-    z-index: 50;
-    text-shadow: 0 5px 20px currentColor;
-    letter-spacing: 3px;
+    transition: opacity 0.2s ease;
+    z-index: 10;
 }
 
 .like-indicator {
     right: 30px;
     color: #51cf66;
-    transform: rotate(20deg) scale(0.8);
-    text-shadow: 0 5px 30px rgba(81, 207, 102, 0.6);
+    transform: rotate(20deg);
 }
 
 .pass-indicator {
     left: 30px;
     color: #ff6b6b;
-    transform: rotate(-20deg) scale(0.8);
-    text-shadow: 0 5px 30px rgba(255, 107, 107, 0.6);
+    transform: rotate(-20deg);
 }
 
 .card.showing-like .like-indicator {
     opacity: 1;
-    transform: rotate(20deg) scale(1);
-    animation: bounceIn 0.4s ease;
 }
 
 .card.showing-pass .pass-indicator {
     opacity: 1;
-    transform: rotate(-20deg) scale(1);
-    animation: bounceIn 0.4s ease;
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: rotate(20deg) scale(0.5);
-        opacity: 0;
-    }
-    50% {
-        transform: rotate(20deg) scale(1.1);
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(20deg) scale(1);
-        opacity: 1;
-    }
-}
-
-/* Completion Card */
-.completion-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
-    animation: completionEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes completionEntrance {
-    from {
-        opacity: 0;
-        transform: scale(0.5) rotate(-10deg);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
 }
 
 .completion-icon {
-    font-size: 5em;
-}
-
-/* Only animate on desktop */
-@media (min-width: 768px) {
-    .completion-icon {
-        animation: celebrate 1s ease infinite alternate;
-    }
-}
-
-@keyframes celebrate {
-    from {
-        transform: scale(1) rotate(-5deg);
-    }
-    to {
-        transform: scale(1.2) rotate(5deg);
-    }
+    font-size: 4em;
+    margin-bottom: 20px;
 }
 
 .restart-btn {
-    margin-top: 25px;
-    padding: 15px 35px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #667eea;
     color: white;
     border: none;
-    border-radius: 30px;
-    font-size: 1.1em;
-    font-weight: 600;
+    border-radius: 25px;
+    font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    letter-spacing: 0.5px;
-}
-
-.restart-btn span {
-    font-size: 1.3em;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.restart-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
-    background: linear-gradient(135deg, #5568d3 0%, #6a3d8c 100%);
-}
-
-.restart-btn:hover span {
-    transform: rotate(180deg);
 }
 
 .restart-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.5);
+    opacity: 0.8;
 }
 
-@media (max-width: 767px) {
-    body {
-        padding: 10px;
-    }
-
+@media (max-width: 480px) {
     .quote-text {
         font-size: 1.2em;
     }
 
-    .gradient-text {
-        font-size: 1.8em;
-    }
-
-    .btn {
-        width: 65px;
-        height: 65px;
-        font-size: 1.8em;
-    }
-
-    .card-emoji {
-        font-size: 6em;
-        opacity: 0.1;
-    }
-
-    .card-content {
-        padding: 30px 20px;
-    }
-
-    .card {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .card-background {
-        opacity: 0.25;
+    header h1 {
+        font-size: 1.5em;
     }
 }
 
 @media (max-height: 700px) {
-    .card-content {
-        padding: 25px 20px;
+    .card {
+        padding: 30px 25px;
     }
 
     .quote-text {
         font-size: 1.2em;
-    }
-
-    .completion-icon {
-        font-size: 3.5em;
-    }
-
-    .card-emoji {
-        font-size: 6em;
     }
 }

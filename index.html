@@ -11,19 +11,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="background-animation">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="floating-shape shape-4"></div>
-        <div class="floating-shape shape-5"></div>
-        <div class="stars"></div>
-    </div>
-
     <div class="container">
         <header>
-            <h1 class="gradient-text">✨ Daily Affirmations ✨</h1>
+            <h1>✨ Daily Affirmations</h1>
             <p class="subtitle">Swipe for inspiration</p>
         </header>
 
@@ -33,12 +23,10 @@
 
         <div class="actions">
             <button class="btn btn-pass" id="passBtn">
-                <span class="btn-icon">✕</span>
-                <div class="btn-ripple"></div>
+                <span>👎</span>
             </button>
             <button class="btn btn-like" id="likeBtn">
-                <span class="btn-icon">♥</span>
-                <div class="btn-ripple"></div>
+                <span>❤️</span>
             </button>
         </div>
 
@@ -46,9 +34,7 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progressBar"></div>
             </div>
-            <p class="swipe-count">
-                <span id="cardCount">0</span> cards remaining
-            </p>
+            <p class="swipe-count">Cards remaining: <span id="cardCount">0</span></p>
         </div>
     </div>
 

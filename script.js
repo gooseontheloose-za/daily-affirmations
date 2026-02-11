@@ -38,30 +38,13 @@ class SwipeCards {
             card.className = 'card';
             card.style.zIndex = quotes.length - index;
 
-            // Create background overlay
-            const bgOverlay = document.createElement('div');
-            bgOverlay.className = 'card-background';
-            bgOverlay.style.background = quote.background;
-            card.appendChild(bgOverlay);
-
-            // Add emoji decoration
-            if (quote.emoji) {
-                const emojiDecor = document.createElement('div');
-                emojiDecor.className = 'card-emoji';
-                emojiDecor.textContent = quote.emoji;
-                card.appendChild(emojiDecor);
-            }
-
-            const content = document.createElement('div');
-            content.className = 'card-content';
-            content.innerHTML = `
+            card.innerHTML = `
                 <div class="card-type ${quote.type}">${quote.type}</div>
                 <div class="pass-indicator">NOPE</div>
                 <div class="like-indicator">LIKE</div>
                 <div class="quote-text">${quote.text}</div>
                 ${quote.reference ? `<div class="quote-reference">${quote.reference}</div>` : ''}
             `;
-            card.appendChild(content);
 
             this.cardContainer.appendChild(card);
             this.cards.push(card);
@@ -197,27 +180,14 @@ class SwipeCards {
 
     showCompletionMessage() {
         const message = document.createElement('div');
-        message.className = 'card completion-card';
+        message.className = 'card';
         message.style.zIndex = '1000';
-
-        // Create completion background
-        const bgOverlay = document.createElement('div');
-        bgOverlay.className = 'card-background';
-        bgOverlay.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-        message.appendChild(bgOverlay);
-
-        const content = document.createElement('div');
-        content.className = 'card-content';
-        content.innerHTML = `
+        message.innerHTML = `
             <div class="completion-icon">🎉</div>
-            <div class="quote-text" style="margin-top: 20px;">You've completed all affirmations for today!</div>
-            <p style="color: #636e72; margin: 15px 0; font-size: 0.95em;">Take a moment to reflect on these powerful messages.</p>
-            <button onclick="location.reload()" class="restart-btn">
-                <span>↻</span> Start Over
-            </button>
+            <div class="quote-text">You've completed all affirmations for today!</div>
+            <p style="color: #636e72; margin: 15px 0;">Take a moment to reflect on these powerful messages.</p>
+            <button onclick="location.reload()" class="restart-btn">Start Over</button>
         `;
-        message.appendChild(content);
-
         this.cardContainer.appendChild(message);
     }
 }
