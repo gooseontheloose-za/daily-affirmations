@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Daily Affirmations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+        <div class="stars"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 class="gradient-text">✨ Daily Affirmations ✨</h1>
+            <p class="subtitle">Swipe for inspiration</p>
+        </header>
+
+        <div class="card-container" id="cardContainer">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-pass" id="passBtn">
+                <span class="btn-icon">✕</span>
+                <div class="btn-ripple"></div>
+            </button>
+            <button class="btn btn-like" id="likeBtn">
+                <span class="btn-icon">♥</span>
+                <div class="btn-ripple"></div>
+            </button>
+        </div>
+
+        <div class="footer">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <p class="swipe-count">
+                <span id="cardCount">0</span> cards remaining
+            </p>
+        </div>
+    </div>
+
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
